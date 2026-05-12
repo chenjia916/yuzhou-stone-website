@@ -6,6 +6,8 @@
 <title>裕洲石材 - 匠心雕石 · 精工筑家</title>
 <meta name="keywords" content="各类奢石背景,石材干挂,室内石材装修,楼梯石,门斗石,厨房石">
 <meta name="description" content="裕洲石材深耕石材行业多年，拥有自动化雕刻、智能切割、精准仿型全套先进生产设备，实现从原料开采、精细加工到成品出厂的全产业链一体化生产。">
+<!-- 新增下面这一行：破解绝大多数免费图床的防盗链限制 -->
+<meta name="referrer" content="no-referrer">
 <style>
 :root{--p-color:#1b4c74;--p-grad:linear-gradient(135deg,#1b4c74 0%,#2b6a9e 100%);--bg:#f4f7f9;--l-bg:#f8fbff;--b-color:#eef4fa;--radius:16px;--shadow:0 8px 24px rgba(0,0,0,0.06);}
 [data-theme="red"]{--p-color:#c0392b;--p-grad:linear-gradient(135deg,#c0392b 0%,#e74c3c 100%);--l-bg:#fdedec;--b-color:#fadbd8;}
@@ -41,7 +43,7 @@
         <div style="font-size:15px;opacity:0.9">{{pageData.header.subtitle}}</div>
     </div>
 
-    <!-- 顶部轮播展示 (后期你可以在下面的 JSON 数据中替换图片链接) -->
+    <!-- 顶部轮播展示 -->
     <div class="card-box" style="margin-top:-35px;z-index:5;padding:15px">
         <div class="slider-box" ref="bannerList">
             <div class="slider-item" v-for="(media, idx) in pageData.banners" :key="'ban'+idx">
@@ -118,12 +120,12 @@
         </div>
     </div>
 
-    <div style="text-align:center;color:#ccc;font-size:12px;padding:30px 20px;">— 裕洲石材 · Cloudflare 极速驱动 —</div>
+    <div style="text-align:center;color:#ccc;font-size:12px;padding:30px 20px;">— 裕洲石材 · 极速引擎驱动 —</div>
 
     <div class="back-top" :style="{opacity: showTop?1:0, pointerEvents: showTop?'auto':'none'}" @click="toTop">↑</div>
 </div>
 
-<!-- 所有的文案和图片配置都在这里，后续需要修改直接改这里的文字即可！ -->
+<!-- 所有的文案和图片配置都在这里 -->
 <script id="page-data" type="application/json">
 {
   "theme": "blue",
@@ -142,16 +144,17 @@
     "phone": "15999568586",
     "address": "汕尾市陆丰市城东街道水墘国道边",
     "scope": "各类奢石背景 | 石材干挂 | 室内石材装修 | 楼梯石 | 门斗石 | 厨房石 | 石材外挂",
-    "qrCodes": [
-        "https://api.dujin.org/bing/1920.php"
-    ]
+    "qrCodes": []
   },
   "about": {
     "titleCn": "关于工厂",
     "titleEn": "ABOUT THE FACTORY",
     "content": "<p>裕洲石材深耕石材行业多年，拥有自动化雕刻、智能切割、精准仿型全套先进生产设备，实现从原料开采、精细加工到成品出厂的全产业链一体化生产。</p><p>公司经验丰富、技术成熟、工艺稳定，聚焦家装石材定制需求，始终坚持品质为本、服务周到，为广大客户提供高性价比、高质量的家装石材产品与一站式定制服务。</p>"
   },
-  "banners": ["https://i.111666.best/image/kgkKxQ103zbwRgZ0yvkSSM.jpg","https://i.111666.best/image/kgkKxQ103zbwRgZ0yvkSSM.jpg"],
+  "banners": [
+    "https://i.111666.best/image/kgkKxQ103zbwRgZ0yvkSSM.jpg",
+    "https://i.111666.best/image/kgkKxQ103zbwRgZ0yvkSSM.jpg"
+  ],
   "advantages": [
     { "title": "01 设备先进", "desc": "自动化雕刻、切割、仿型设备齐全，家装石材加工精度高，生产高效，品质更稳定" },
     { "title": "02 全产业链", "desc": "从原料到成品一站式生产，无中间商，家装石材性价比更高" },
@@ -176,7 +179,7 @@
 <script src="https://cdn.staticfile.net/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script>
 
 <script>
-let parsedData; try{ parsedData = JSON.parse(document.getElementById('page-data').textContent); }catch(e){ alert('数据解析失败,请检查配置'); }
+let parsedData; try{ parsedData = JSON.parse(document.getElementById('page-data').textContent); }catch(e){ alert('数据解析失败,请检查配置(注意网址是否缺少双引号)'); }
 if(parsedData && typeof Vue !== 'undefined') {
     const { createApp, ref, reactive, onMounted } = Vue;
     const app = createApp({
