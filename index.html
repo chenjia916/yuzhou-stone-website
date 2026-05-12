@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="blue">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>裕洲石材 - 匠心雕石 · 精工筑家</title>
+<meta name="keywords" content="各类奢石背景,石材干挂,室内石材装修,楼梯石,门斗石,厨房石">
+<meta name="description" content="裕洲石材深耕石材行业多年，拥有自动化雕刻、智能切割、精准仿型全套先进生产设备，实现从原料开采、精细加工到成品出厂的全产业链一体化生产。">
+<style>
+:root{--p-color:#1b4c74;--p-grad:linear-gradient(135deg,#1b4c74 0%,#2b6a9e 100%);--bg:#f4f7f9;--l-bg:#f8fbff;--b-color:#eef4fa;--radius:16px;--shadow:0 8px 24px rgba(0,0,0,0.06);}
+[data-theme="red"]{--p-color:#c0392b;--p-grad:linear-gradient(135deg,#c0392b 0%,#e74c3c 100%);--l-bg:#fdedec;--b-color:#fadbd8;}
+[data-theme="green"]{--p-color:#27ae60;--p-grad:linear-gradient(135deg,#27ae60 0%,#2ecc71 100%);--l-bg:#e9f7ef;--b-color:#d4efdf;}
+[data-theme="dark"]{--p-color:#2c3e50;--p-grad:linear-gradient(135deg,#1a252f 0%,#2c3e50 100%);--l-bg:#eaeded;--b-color:#d5dbdb;}
+*{box-sizing:border-box;margin:0;padding:0;outline:none;} body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.6;overflow-x:hidden;}
+[v-cloak]{display:none!important;} 
+#app { opacity: 0; animation: fadeIn 0.4s ease forwards; } @keyframes fadeIn { to { opacity: 1; } }
+.app-wrapper{max-width:600px;margin:0 auto;min-height:100vh;background:#fff;box-shadow:0 0 30px rgba(0,0,0,0.08);padding-bottom:30px;position:relative;}
+.card-box{background:#fff;border-radius:var(--radius);margin:15px 12px;padding:20px;box-shadow:var(--shadow);position:relative;}
+.bg-light{background:var(--l-bg);border:1px solid var(--b-color);}
+.header-banner{background:var(--p-grad);padding:35px 20px 55px;text-align:center;color:#fff;border-radius:0 0 24px 24px;}
+.slider-box{height:220px;border-radius:12px;background:#f0f0f0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;} .slider-item{flex:0 0 100%;scroll-snap-align:start;position:relative;border-radius:12px;overflow:hidden;} .slider-img{width:100%;height:100%;object-fit:cover;}
+.sec-header{display:flex;align-items:baseline;gap:10px;margin-bottom:20px;} .sec-title-cn{font-size:20px;font-weight:bold;color:var(--p-color);position:relative;padding-left:12px;} .sec-title-cn::before{content:'';position:absolute;left:0;top:15%;bottom:15%;width:4px;background:var(--p-color);border-radius:2px;}
+.biz-list, .adv-list{display:flex;flex-direction:column;gap:20px;} .biz-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.05);position:relative;border:1px solid rgba(0,0,0,0.05);}
+.biz-img-area{height:180px;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;} .biz-img-wrap{flex:0 0 100%;scroll-snap-align:start;position:relative;}
+.adv-item{background:#fff;padding:15px;border-radius:10px;position:relative;box-shadow:0 2px 12px rgba(0,0,0,0.04);border-left:4px solid var(--p-color);}
+.contact-card{background:var(--p-color);border-radius:16px;padding:25px;color:#fff;position:relative;overflow:hidden;} .contact-card::after{content:'';position:absolute;right:-20px;bottom:-20px;width:120px;height:120px;background:rgba(255,255,255,0.08);border-radius:50%;}
+.qr-scroll{display:flex;overflow-x:auto;gap:15px;padding-top:10px;} .qr-item{width:100px;height:100px;flex-shrink:0;border-radius:10px;background:#fff;position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+.back-top{position:fixed;right:20px;bottom:30px;width:45px;height:45px;background:#fff;color:var(--p-color);border-radius:50%;text-align:center;line-height:45px;font-size:20px;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.15);z-index:900;transition:.3s;}
+.vid-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:40px;color:#fff;opacity:0.9;pointer-events:none;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5));}
+.ql-editor{font-size:14px;color:#444;line-height:1.8;}
+</style>
+<link href="https://cdn.staticfile.net/aos/2.3.4/aos.css" rel="stylesheet">
+<link href="https://cdn.staticfile.net/fancyapps-ui/5.0.33/fancybox/fancybox.css" rel="stylesheet">
+</head><body>
+
+<div id="app" class="app-wrapper" v-cloak>
+    <!-- 头部区域 -->
+    <div class="header-banner">
+        <div style="font-size:11px;margin-bottom:12px;letter-spacing:1px">{{pageData.header.brandTag}}</div>
+        <div style="font-size:28px;font-weight:bold;margin-bottom:10px">{{pageData.header.title}}</div>
+        <div style="font-size:15px;opacity:0.9">{{pageData.header.subtitle}}</div>
+    </div>
+
+    <!-- 顶部轮播展示 (后期你可以在下面的 JSON 数据中替换图片链接) -->
+    <div class="card-box" style="margin-top:-35px;z-index:5;padding:15px">
+        <div class="slider-box" ref="bannerList">
+            <div class="slider-item" v-for="(media, idx) in pageData.banners" :key="'ban'+idx">
+                <video v-if="isVid(media.url||media)" :src="media.url||media" class="slider-img" controls data-fancybox="gallery"></video>
+                <img v-else :src="media.url||media" class="slider-img" data-fancybox="gallery">
+            </div>
+            <div class="slider-item" v-if="!validLen(pageData.banners)" style="display:flex;align-items:center;justify-content:center;color:#999;font-size:13px;background:url('https://api.dujin.org/bing/1920.php') center/cover;">
+                <div style="background:rgba(0,0,0,0.5);color:#fff;padding:5px 15px;border-radius:20px;backdrop-filter:blur(5px)">暂无轮播图</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系名片 -->
+    <div class="card-box" style="padding:0;background:none;box-shadow:none;" data-aos="fade-up">
+        <div class="contact-card">
+            <div style="font-size:20px;font-weight:bold;margin-bottom:15px;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:12px">{{pageData.contact.sectionTitle}}</div>
+            <div style="display:flex;margin-bottom:12px;cursor:pointer;position:relative;z-index:2" @click="callPhone(pageData.contact.phone)">
+                <span style="margin-right:10px;font-size:18px">📞</span><div style="flex:1"><span style="font-weight:bold;font-size:16px">{{pageData.contact.phone}} <small style="font-weight:normal;opacity:0.8">(点击拨打)</small></span></div>
+            </div>
+            <div style="display:flex;margin-bottom:12px;position:relative;z-index:2">
+                <span style="margin-right:10px;font-size:18px">📍</span><div style="flex:1"><span>{{pageData.contact.address}}</span></div>
+            </div>
+            <div style="display:flex;background:rgba(0,0,0,0.15);padding:12px;border-radius:10px;margin-top:20px;position:relative;z-index:2">
+                <span style="margin-right:10px;font-size:18px">🏷️</span><div style="flex:1"><span style="font-size:13px">主营：{{pageData.contact.scope}}</span></div>
+            </div>
+            <div style="margin-top:25px;border-top:1px dashed rgba(255,255,255,0.3);padding-top:20px;position:relative;z-index:2" v-if="validLen(pageData.contact.qrCodes)">
+                <div style="font-size:14px;margin-bottom:12px;font-weight:bold">扫码添加微信/名片</div>
+                <div class="qr-scroll">
+                    <div class="qr-item" v-for="(qr, idx) in pageData.contact.qrCodes" :key="'qr'+idx">
+                        <img :src="qr.url||qr" class="slider-img" data-fancybox="qr">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于我们 -->
+    <div class="card-box" data-aos="fade-up">
+        <div class="sec-header">
+            <div style="flex:1"><div class="sec-title-cn">{{pageData.about.titleCn}}</div></div>
+            <div><div style="font-size:11px;color:#999;letter-spacing:1px">{{pageData.about.titleEn}}</div></div>
+        </div>
+        <div class="ql-editor" v-html="pageData.about.content"></div>
+    </div>
+
+    <!-- 核心业务 -->
+    <div class="card-box bg-light" data-aos="fade-up">
+        <div class="sec-header"><div class="sec-title-cn" style="flex:1">核心家装业务</div><div style="font-size:11px;color:#999;letter-spacing:1px">CORE BUSINESS</div></div>
+        <div class="biz-list" ref="bizList">
+            <div class="biz-card" v-for="(biz, bIdx) in pageData.businesses" :key="'biz'+bIdx">
+                <div class="biz-img-area">
+                    <div class="biz-img-wrap" v-for="(img, iIdx) in biz.images" :key="'bimg'+bIdx+'-'+iIdx">
+                        <video v-if="isVid(img.url||img)" :src="img.url||img" class="slider-img" controls :data-fancybox="'biz'+bIdx"></video>
+                        <template v-else><img :src="img.url||img" class="slider-img" :data-fancybox="'biz'+bIdx"><div v-if="isVid(img.url||img)" class="vid-icon">▶</div></template>
+                    </div>
+                    <div class="biz-img-wrap" v-if="!validLen(biz.images)" style="display:flex;align-items:center;justify-content:center;background:#f5f5f5;color:#999;font-size:13px;">暂无配图</div>
+                </div>
+                <div style="padding:15px">
+                    <div style="font-size:17px;font-weight:bold;margin-bottom:8px">{{biz.name}}</div>
+                    <div style="font-size:14px;color:#555;line-height:1.7">{{biz.desc}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 我们的优势 -->
+    <div class="card-box" data-aos="fade-up">
+        <div class="sec-header"><div class="sec-title-cn" style="flex:1">我们的家装优势</div><div style="font-size:11px;color:#999;letter-spacing:1px">OUR ADVANTAGES</div></div>
+        <div class="adv-list">
+            <div class="adv-item" v-for="(adv, aIdx) in pageData.advantages" :key="'adv'+aIdx">
+                <div style="font-size:16px;font-weight:bold;color:var(--p-color);margin-bottom:8px">{{adv.title}}</div>
+                <div style="font-size:14px;color:#555;line-height:1.7">{{adv.desc}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center;color:#ccc;font-size:12px;padding:30px 20px;">— 裕洲石材 · Cloudflare 极速驱动 —</div>
+
+    <div class="back-top" :style="{opacity: showTop?1:0, pointerEvents: showTop?'auto':'none'}" @click="toTop">↑</div>
+</div>
+
+<!-- 所有的文案和图片配置都在这里，后续需要修改直接改这里的文字即可！ -->
+<script id="page-data" type="application/json">
+{
+  "theme": "blue",
+  "seo": {
+    "title": "裕洲石材 - 匠心雕石 · 精工筑家",
+    "keywords": "各类奢石背景,石材干挂,室内石材装修,楼梯石,门斗石,厨房石",
+    "description": "裕洲石材深耕石材行业多年，拥有自动化雕刻、智能切割、精准仿型全套先进生产设备，实现从原料开采、精细加工到成品出厂的全产业链一体化生产。"
+  },
+  "header": {
+    "brandTag": "BRAND EXPECTED ADOPTION",
+    "title": "裕洲石材",
+    "subtitle": "匠心雕石 · 精工筑家"
+  },
+  "contact": {
+    "sectionTitle": "联系我们",
+    "phone": "15999568586",
+    "address": "汕尾市陆丰市城东街道水墘国道边",
+    "scope": "各类奢石背景 | 石材干挂 | 室内石材装修 | 楼梯石 | 门斗石 | 厨房石 | 石材外挂",
+    "qrCodes": [
+        "https://api.dujin.org/bing/1920.php"
+    ]
+  },
+  "about": {
+    "titleCn": "关于工厂",
+    "titleEn": "ABOUT THE FACTORY",
+    "content": "<p>裕洲石材深耕石材行业多年，拥有自动化雕刻、智能切割、精准仿型全套先进生产设备，实现从原料开采、精细加工到成品出厂的全产业链一体化生产。</p><p>公司经验丰富、技术成熟、工艺稳定，聚焦家装石材定制需求，始终坚持品质为本、服务周到，为广大客户提供高性价比、高质量的家装石材产品与一站式定制服务。</p>"
+  },
+  "banners": [],
+  "advantages": [
+    { "title": "01 设备先进", "desc": "自动化雕刻、切割、仿型设备齐全，家装石材加工精度高，生产高效，品质更稳定" },
+    { "title": "02 全产业链", "desc": "从原料到成品一站式生产，无中间商，家装石材性价比更高" },
+    { "title": "03 技术成熟", "desc": "多年家装石材施工经验，工艺精湛，做工精细，适配各类家装场景，经久耐用" },
+    { "title": "04 服务周到", "desc": "按需定制、上门测量、快速响应、售后无忧，家装合作更放心" },
+    { "title": "05 品类齐全", "desc": "奢石背景、干挂外挂、全屋石材装修等一站式满足，家装石材需求全覆盖" }
+  ],
+  "businesses": [
+    { "name": "各类奢石背景", "desc": "定制电视、客厅、玄关等全屋奢石背景墙，纹理自然独特、质感高端，自动化设备精雕细琢，打造专属家装美学。", "images": [] },
+    { "name": "石材干挂 / 外挂", "desc": "专业承接外墙石材干挂、外挂工程，工艺牢固耐用、抗风抗压，花色丰富，兼顾建筑美观与实用防护。", "images": [] },
+    { "name": "室内石材装修", "desc": "全屋室内石材定制装修，涵盖地面、墙面、垭口等全空间，石材选材多样、做工精细，提升家装质感与档次。", "images": [] },
+    { "name": "楼梯石", "desc": "定制楼梯踏步、踢脚线、扶手等石材配套，尺寸精准、防滑耐磨，拼接流畅，兼顾安全与美观。", "images": [] },
+    { "name": "门斗石", "desc": "打造门斗、门廊石材造型与铺装，造型大气、经久耐用，彰显入户仪式感，适配各类家装风格。", "images": [] },
+    { "name": "厨房石", "desc": "定制厨房台面、窗台石、挡水条等石材制品，防刮耐污、易清洁，防水抗裂，适配厨房高频使用需求。", "images": [] },
+    { "name": "石材定制配套", "desc": "门套、石桌石凳、阳台石材铺装等异形家装石材，来图来样均可专属定制，贴合个性化家装需求。", "images": [] }
+  ]
+}
+</script>
+
+<script src="https://cdn.staticfile.net/vue/3.3.4/vue.global.prod.min.js"></script>
+<script src="https://cdn.staticfile.net/aos/2.3.4/aos.js"></script>
+<script src="https://cdn.staticfile.net/fancyapps-ui/5.0.33/fancybox/fancybox.umd.min.js"></script>
+
+<script>
+let parsedData; try{ parsedData = JSON.parse(document.getElementById('page-data').textContent); }catch(e){ alert('数据解析失败,请检查配置'); }
+if(parsedData && typeof Vue !== 'undefined') {
+    const { createApp, ref, reactive, onMounted } = Vue;
+    const app = createApp({
+        setup() {
+            const rawData = parsedData;
+            const normalizeArr = (arr) => arr.map(i => typeof i === 'string' ? {url: i, _deleted: false} : i);
+            if(rawData.banners) rawData.banners = normalizeArr(rawData.banners);
+            if(rawData.contact.qrCodes) rawData.contact.qrCodes = normalizeArr(rawData.contact.qrCodes);
+            if(rawData.businesses) rawData.businesses.forEach(b => { if(b.images) b.images = normalizeArr(b.images); });
+            
+            const pageData = reactive(rawData);
+            const showTop = ref(false);
+            const toTop = () => window.scrollTo({top:0, behavior:'smooth'});
+
+            onMounted(() => {
+                window.addEventListener('scroll', () => { showTop.value = window.scrollY > 300; });
+                if(typeof AOS !== 'undefined') AOS.init({duration: 800, once: true, offset: 50});
+                if(typeof Fancybox !== 'undefined') Fancybox.bind("[data-fancybox]", {});
+            });
+
+            const validLen = (arr) => arr && arr.length > 0;
+            const callPhone = (p) => { if(p) location.href='tel:'+p; };
+            const isVid = (url) => url && typeof url==='string' && url.toLowerCase().endsWith('.mp4');
+
+            return { pageData, showTop, toTop, validLen, callPhone, isVid };
+        }
+    });
+    app.mount('#app');
+}
+</script>
+</body>
+</html>
